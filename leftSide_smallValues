@@ -1,0 +1,26 @@
+import java.util.*;
+/*to find the left side smallest values of every element in the array until it found the
+greatest value,if no greatest/largest value is found then it goes upto 0th index*/
+public class Main {
+    public static void main(String[] args) {
+      int[] arr={1,4,2,6,9,3,5,11};
+      int[] arr2=new int[arr.length]; 
+      int sum=0;
+      for(int i=arr.length-1;i>=0;i--){
+        int count=arr[i];
+        sum=0;
+        for(int j=i-1;j>=0;j--){
+          if(arr[j]<count){
+            sum++;
+          }
+          else{
+            j=0;
+          }
+        }
+        arr2[i]=sum;
+      }
+      for(int i:arr2){
+        System.out.print(i+" ");
+      }
+  }
+}
