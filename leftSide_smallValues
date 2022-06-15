@@ -1,6 +1,6 @@
 import java.util.*;
 /*to find the left side smallest values of every element in the array until it found the
-greatest value,if no greatest/largest value is found then it goes upto 0th index*/
+greatest value,if no greatest/largest value is found then it goes up to 0th index*/
 public class Main {
     public static void main(String[] args) {
       int[] arr={1,4,2,6,9,3,5,11};
