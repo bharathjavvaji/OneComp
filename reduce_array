@@ -16,7 +16,7 @@ public class Main {
       for(int j=i+1;j<ls.size();j++)
        if(ls.get(i)<ls.get(j)){
          ls.remove(j);
-         j=ls.size()-1;
+         break;
        }
     }
     System.out.println(ls);
