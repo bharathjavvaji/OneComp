@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+     String s="abcd";
+     String v="aeiou";
+     int n=s.length();
+     int sum=n*(n+1)/2;
+     int c=0,t=0;
+     int r=0;
+     for(int i=0;i<s.length();i++){
+       if(!v.contains(String.valueOf(s.charAt(i)))) { c++;}
+       else{ 
+         t=c*(c+1)/2 ;
+         sum-=t;
+         c=0;
+       }
+     }
+     r=c*(c+1)/2 ;
+     sum=sum-r;
+     System.out.println(sum);
+     
+  }
+}
