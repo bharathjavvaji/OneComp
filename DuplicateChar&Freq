@@ -11,7 +11,7 @@ public class Main {
         if(fre[i]>1){
           int a=i+97;
           char c=(char)a;
-          System.out.println(c);
+          System.out.println(c+" "+fre[i]);
         }
       }
       System.out.println(Arrays.toString(fre));
