@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      char ch1[]={'A','B','C','E'};
+      char ch2[]={'A','B','C','D'};
+      HashSet<Character> hs1=new HashSet<>();
+      HashSet<Character> hs2=new HashSet<>();
+      for(char c:ch1){
+        hs1.add(c);
+      }
+       for(char c:ch2){
+        if(!hs1.add(c)){
+           hs2.add(c);
+           
+       }
+      }
+       hs1.removeAll(hs2);
+      System.out.println(hs1);//uncommon characters
+      System.out.println(hs2);//common characters
+     
+  }
+}
