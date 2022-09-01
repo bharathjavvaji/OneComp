@@ -1,0 +1,48 @@
+import java.util.*;
+/*
+pin formation
+thousands place should be smallest digit among 3 inputs
+hundreds place should be largest digit among 3 inputs
+tens place should be smallest digit among 3 inputs of frequency 1
+ones place should be largest digit among 3 inputs of frequency >1 or 2
+*/
+public class Main {
+    public static void main(String[] args) {
+     int i1=8530;
+     int i2=5620;
+     int i3=7532;
+     String s1=i1+"";
+     String s2=i2+"";
+     String s3=i3+"";
+     char[] c1=s1.toCharArray();
+     Arrays.sort(c1);
+     char[] c2=s2.toCharArray();
+     Arrays.sort(c2);
+     char[] c3=s3.toCharArray();
+     Arrays.sort(c3);
+     int[] fre1=new int[10];
+     for(int i=0;i<4;i++){
+       fre1[c1[i]-'0']++;
+       fre1[c2[i]-'0']++;
+       fre1[c3[i]-'0']++;
+     }
+     char[] c4=new char[4];
+    int a=Integer.parseInt(c1[0]+"");
+    int b=Integer.parseInt(c2[0]+"");
+    int c=Integer.parseInt(c3[0]+"");
+    int small=(a<b)?(a<c?a:c):(b<c?b:c);
+    c4[0]=(char)small;
+    int d=Integer.parseInt(c1[3]+"");
+    int e=Integer.parseInt(c2[3]+"");
+    int f=Integer.parseInt(c3[3]+"");
+    int lar=(d>e)?(d>f?d:f):(e>f?e:f);
+    c4[1]=(char)lar;
+    int thri=9999;
+    int four=-999;
+    for(int i=0;i<10;i++){
+      if(fre1[i]==1) thri=Math.min(thri,Integer.parseInt(i+""));
+      if(fre1[i]>1) four=Math.max(four,Integer.parseInt(i+""));
+    }
+     System.out.println(small+" "+lar+" "+thri+" "+four);
+  }
+}
