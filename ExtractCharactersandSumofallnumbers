@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      String s = "dhj34dfhf9fs10";
+      char[] c = s.toCharArray();
+       int sum = 0;
+      String result = "";
+      String b="";
+        for (int i = 0; i < c.length; i++) {
+           char ch = c[i];
+          if (Character.isDigit(ch)) {
+                b+=c[i];
+            }
+            else {
+                 if (b!= "") {
+                    sum += Integer.valueOf(b);
+                    b = "";
+                }
+                result = result + c[i];
+            }
+  }
+   if (b!= "")
+   {
+     sum += Integer.valueOf(b);
+     b = "";
+    }
+  System.out.println(result);
+  System.out.println(sum);
+}
+}
