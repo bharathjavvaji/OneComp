@@ -1,0 +1,46 @@
+import java.util.*;
+/*
+given directions N->E->->S->W
+N-North,E-East,S-South,W-West
+and array=[-2,3,4,-3,2,4,-3]
+find the direction after passing through all indices
+if the value<0 then travel left(anti-clockwise)
+if the value>0 then travel right(clockwise)
+intially the direction is N
+          N
+       W     E
+          S
+Explanation:-
+-2-w
+3-N
+4-E
+-3-N
+2-E
+4-S
+-3-E
+The last indice is passing towards east.
+
+*/
+public class Main {
+    public static void main(String[] args) {
+      int[] arr={1,2,3,4,1};
+      char[] ch={'N','E','S','W'};
+      int start=0;
+      for(int i=0;i<arr.length;i++){
+        if(arr[i]<0){
+          start=start-1;
+            if(start<0){
+              start=ch.length-1;
+            }
+        } 
+        if(arr[i]>0){
+          start=start+1;
+          if(start>ch.length-1){
+              start=0;
+            }
+        }
+         System.out.println("at each index "+ch[start]);
+      }
+      System.out.println("final direction is "+ch[start]);
+  }
+}
